@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOOK STUDIO — Curtains, Drapery &amp; Blinds</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap');
+
+:root{
+  --linen:#EDE7DB;
+  --linen-deep:#E2D9C7;
+  --cream:#F8F5EE;
+  --ink:#2A2823;
+  --ink-soft:#5C584F;
+  --walnut:#8A6B4C;
+  --walnut-deep:#6E5439;
+  --sage:#8C9C7E;
+  --clay:#BE7C56;
+  --dusty-blue:#7C93A0;
+  --line:rgba(42,40,35,0.14);
+  --current-swatch:#8C9C7E;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--linen);
+  color:var(--ink);
+  font-family:'Work Sans', sans-serif;
+  font-weight:400;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+}
+a{color:inherit; text-decoration:none;}
+img{max-width:100%; display:block;}
+.wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+.eyebrow{
+  font-size:12.5px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--walnut-deep);
+  font-weight:600;
+}
+@media(prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+}
+
+/* ===== Header ===== */
+header{
+  position:sticky; top:0; z-index:100;
+  background:rgba(237,231,219,0.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 32px;
+  max-width:1180px; margin:0 auto;
+}
+.logo{
+  font-family:'Fraunces', serif;
+  font-size:22px;
+  font-weight:600;
+  letter-spacing:0.02em;
+}
+.logo span{color:var(--walnut);}
+nav ul{
+  display:flex; gap:34px;
+  list-style:none;
+}
+nav a{
+  font-size:14.5px;
+  font-weight:500;
+  color:var(--ink-soft);
+  transition:color 0.2s ease;
+  position:relative;
+}
+nav a:hover, nav a:focus-visible{color:var(--ink);}
+.nav-right{display:flex; align-items:center; gap:22px;}
+.nav-phone{
+  font-size:14px; font-weight:600;
+  display:flex; align-items:center; gap:8px;
+  color:var(--ink);
+}
+.nav-phone svg{width:15px; height:15px; stroke:var(--walnut);}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 24px;
+  border-radius:2px;
+  font-size:14px; font-weight:600;
+  cursor:pointer;
+  border:1px solid var(--ink);
+  transition:all 0.2s ease;
+}
+.btn-primary{background:var(--ink); color:var(--cream);}
+.btn-primary:hover{background:var(--walnut-deep); border-color:var(--walnut-deep);}
+.btn-ghost{background:transparent; color:var(--ink); border:1px solid var(--ink);}
+.btn-ghost:hover{background:var(--ink); color:var(--cream);}
+.menu-toggle{display:none; background:none; border:none; cursor:pointer;}
+
+/* ===== Hero ===== */
+.hero{
+  padding:88px 0 60px;
+  overflow:hidden;
+}
+.hero-inner{
+  display:grid;
+  grid-template-columns:1fr 0.95fr;
+  gap:56px;
+  align-items:center;
+}
+.hero h1{
+  font-size:clamp(38px, 5vw, 60px);
+  line-height:1.05;
+  margin:18px 0 22px;
+}
+.hero h1 em{
+  font-style:italic;
+  color:var(--walnut-deep);
+}
+.hero p.lede{
+  font-size:17px;
+  color:var(--ink-soft);
+  max-width:440px;
+  margin-bottom:32px;
+}
+.hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+
+/* Pleat visual */
+.pleat-stage{
+  position:relative;
+  height:440px;
+  border-radius:3px;
+  background:linear-gradient(180deg, var(--linen-deep), var(--linen));
+  border:1px solid var(--line);
+  overflow:hidden;
+}
+.rod{
+  position:absolute; top:26px; left:5%; right:5%;
+  height:6px; border-radius:3px;
+  background:linear-gradient(180deg, #9c8262, var(--walnut-deep));
+  box-shadow:0 2px 4px rgba(0,0,0,0.15);
+  z-index:5;
+}
+.rod::before, .rod::after{
+  content:''; position:absolute; top:-5px;
+  width:16px; height:16px; border-radius:50%;
+  background:var(--walnut-deep);
+}
+.rod::before{left:-8px;}
+.rod::after{right:-8px;}
+.pleats{
+  position:absolute; top:40px; bottom:0; left:6%; right:6%;
+  display:flex;
+}
+.pleat{
+  flex:1;
+  background-color:var(--current-swatch);
+  transition:background-color 0.6s ease;
+  transform-origin:top center;
+  animation:sway 6s ease-in-out infinite;
+  border-radius:0 0 40% 40% / 0 0 10% 10%;
+}
+.pleat:nth-child(odd){filter:brightness(0.86);}
+.pleat:nth-child(even){filter:brightness(1.08);}
+.pleat:nth-child(3n){animation-delay:-1.2s;}
+.pleat:nth-child(4n){animation-delay:-2.6s;}
+.pleat:nth-child(5n){animation-delay:-3.8s;}
+@keyframes sway{
+  0%,100%{transform:skewX(-1.4deg);}
+  50%{transform:skewX(1.4deg);}
+}
+.pleat-caption{
+  position:absolute; bottom:16px; left:0; right:0;
+  text-align:center;
+  font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--ink-soft); font-weight:600;
+}
+
+/* ===== Marquee strip ===== */
+.strip{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:var(--cream);
+  padding:16px 0;
+  overflow:hidden;
+}
+.strip-track{
+  display:flex; gap:52px;
+  white-space:nowrap;
+  animation:scroll-left 26s linear infinite;
+  width:max-content;
+}
+.strip span{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:16px;
+  color:var(--ink-soft);
+}
+@keyframes scroll-left{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+/* ===== Section shared ===== */
+section{padding:96px 0;}
+.section-head{
+  max-width:600px;
+  margin-bottom:52px;
+}
+.section-head h2{
+  font-size:clamp(28px,3.4vw,38px);
+  margin-top:14px;
+}
+.section-head p{
+  color:var(--ink-soft);
+  margin-top:14px;
+  font-size:15.5px;
+}
+
+/* ===== Categories ===== */
+.cat-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.cat-card{
+  background:var(--linen);
+  padding:34px 26px 30px;
+  transition:background 0.25s ease;
+}
+.cat-card:hover{background:var(--cream);}
+.cat-icon{
+  width:44px; height:44px;
+  margin-bottom:24px;
+}
+.cat-card h3{
+  font-size:19px;
+  margin-bottom:10px;
+}
+.cat-card p{
+  font-size:14px;
+  color:var(--ink-soft);
+  margin-bottom:16px;
+}
+.cat-tag{
+  font-size:11.5px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--walnut-deep);
+}
+.cat-card.trending .cat-tag{color:var(--clay);}
+
+/* ===== Swatch section (signature) ===== */
+.swatch-section{
+  background:var(--ink);
+  color:var(--cream);
+}
+.swatch-section .eyebrow{color:var(--sage);}
+.swatch-section h2{color:var(--cream);}
+.swatch-section .section-head p{color:rgba(248,245,238,0.65);}
+.swatch-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:center;
+}
+.swatch-preview .pleat-stage{
+  background:linear-gradient(180deg, #333127, #2A2823);
+  border-color:rgba(248,245,238,0.14);
+  height:400px;
+}
+.swatch-preview .rod{background:linear-gradient(180deg,#b39a7c,var(--walnut));}
+.swatch-preview .rod::before,.swatch-preview .rod::after{background:var(--walnut);}
+.swatch-list{display:flex; flex-direction:column; gap:0;}
+.swatch-row{
+  display:flex; align-items:center; gap:18px;
+  padding:16px 0;
+  border-bottom:1px solid rgba(248,245,238,0.14);
+  cursor:pointer;
+  background:none; border-left:none; border-right:none; border-top:none;
+  text-align:left;
+  width:100%;
+  color:var(--cream);
+  font-family:'Work Sans', sans-serif;
+}
+.swatch-row:first-child{border-top:1px solid rgba(248,245,238,0.14);}
+.swatch-chip{
+  width:34px; height:34px; border-radius:50%;
+  flex-shrink:0;
+  border:2px solid rgba(248,245,238,0.3);
+  transition:transform 0.2s ease;
+}
+.swatch-row:hover .swatch-chip, .swatch-row.active .swatch-chip{transform:scale(1.12); border-color:var(--cream);}
+.swatch-name{font-size:16px; font-weight:500; font-family:'Fraunces',serif;}
+.swatch-desc{font-size:13px; color:rgba(248,245,238,0.55); margin-left:auto; text-align:right;}
+.swatch-row.active{background:rgba(248,245,238,0.05);}
+
+/* ===== Process ===== */
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:44px;
+}
+.process-step .num{
+  font-family:'Fraunces', serif;
+  font-size:15px;
+  color:var(--walnut);
+  font-weight:600;
+  margin-bottom:18px;
+  display:block;
+}
+.process-step h3{font-size:20px; margin-bottom:10px;}
+.process-step p{font-size:14.5px; color:var(--ink-soft);}
+.process-step{
+  border-top:2px solid var(--ink);
+  padding-top:20px;
+}
+
+/* ===== Testimonials ===== */
+.testimonial-section{background:var(--cream);}
+.test-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+}
+.test-card{
+  background:var(--linen);
+  padding:30px 26px;
+  border:1px solid var(--line);
+}
+.test-card p.quote{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:17px;
+  line-height:1.5;
+  margin-bottom:20px;
+}
+.test-card .who{font-size:13px; color:var(--ink-soft); font-weight:600;}
+
+/* ===== Contact ===== */
+.contact-layout{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:60px;
+}
+.contact-info h2{font-size:clamp(26px,3vw,34px); margin:14px 0 18px;}
+.contact-info p{color:var(--ink-soft); font-size:15px; margin-bottom:28px; max-width:400px;}
+.info-line{
+  display:flex; gap:14px; align-items:flex-start;
+  padding:16px 0;
+  border-top:1px solid var(--line);
+}
+.info-line:last-of-type{border-bottom:1px solid var(--line);}
+.info-line svg{width:18px; height:18px; stroke:var(--walnut-deep); flex-shrink:0; margin-top:2px;}
+.info-line .label{font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); margin-bottom:3px;}
+.info-line .value{font-size:15.5px; font-weight:500;}
+
+form{display:flex; flex-direction:column; gap:18px;}
+.form-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+label{font-size:12px; text-transform:uppercase; letter-spacing:0.07em; font-weight:600; color:var(--ink-soft); margin-bottom:7px; display:block;}
+input, select, textarea{
+  width:100%;
+  background:var(--cream);
+  border:1px solid var(--line);
+  border-radius:2px;
+  padding:13px 14px;
+  font-family:'Work Sans', sans-serif;
+  font-size:14.5px;
+  color:var(--ink);
+}
+input:focus, select:focus, textarea:focus{outline:2px solid var(--walnut); outline-offset:1px;}
+textarea{resize:vertical; min-height:100px;}
+
+/* ===== Footer ===== */
+footer{
+  background:var(--ink);
+  color:rgba(248,245,238,0.7);
+  padding:56px 0 28px;
+}
+.footer-top{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(248,245,238,0.14);
+  margin-bottom:24px;
+}
+.footer-top .logo{color:var(--cream);}
+.footer-top .logo span{color:var(--sage);}
+.footer-top p{font-size:13.5px; margin-top:14px; max-width:260px; line-height:1.6;}
+.footer-col h4{
+  font-size:12px; text-transform:uppercase; letter-spacing:0.08em;
+  color:var(--cream); margin-bottom:16px; font-weight:600;
+}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:10px; font-size:14px;}
+.footer-col a:hover{color:var(--cream);}
+.footer-bottom{
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:12.5px; color:rgba(248,245,238,0.45);
+  flex-wrap:wrap; gap:10px;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:900px){
+  nav ul{display:none;}
+  .menu-toggle{display:block;}
+  .hero-inner{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+  .swatch-layout{grid-template-columns:1fr;}
+  .process-grid{grid-template-columns:1fr;}
+  .test-grid{grid-template-columns:1fr;}
+  .contact-layout{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .nav-phone span.hide-mobile{display:none;}
+}
+@media(max-width:520px){
+  .wrap{padding:0 20px;}
+  .form-row{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="logo">NOOK<span>·</span>STUDIO</a>
+    <nav>
+      <ul>
+        <li><a href="#collections">Sheers</a></li>
+        <li><a href="#collections">Drapery</a></li>
+        <li><a href="#collections">Blinds</a></li>
+        <li><a href="#swatches">Trending</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:+862885238835" class="nav-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="hide-mobile">028 8523 8835</span>
+      </a>
+      <a href="#contact" class="btn btn-primary">Book a measure</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">Curtains · Drapery · Blinds</span>
+        <h1>Light, layered<br>exactly the way<br><em>you</em> like it.</h1>
+        <p class="lede">From gauzy linen sheers to lined blackout drapery, NOOK STUDIO fits every window with fabric chosen for how your room actually lives — not just how it photographs.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Book a measure</a>
+          <a href="#swatches" class="btn btn-ghost">See fabrics</a>
+        </div>
+      </div>
+      <div class="pleat-stage">
+        <div class="rod"></div>
+        <div class="pleats" id="hero-pleats"></div>
+        <div class="pleat-caption">Made to measure, hung by us</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="strip">
+    <div class="strip-track">
+      <span>Linen Sheers</span><span>Blackout Drapery</span><span>Roman Blinds</span><span>Venetian Blinds</span><span>Smart Motorized Tracks</span><span>Double-Rail Layering</span><span>Boucle Textures</span>
+      <span>Linen Sheers</span><span>Blackout Drapery</span><span>Roman Blinds</span><span>Venetian Blinds</span><span>Smart Motorized Tracks</span><span>Double-Rail Layering</span><span>Boucle Textures</span>
+    </div>
+  </div>
+
+  <!-- COLLECTIONS -->
+  <section id="collections">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What we make</span>
+        <h2>Four ways to dress a window</h2>
+        <p>Every style is cut, sewn and fitted to your exact frame — no standard widths, no compromise on drop.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="cat-grid">
+
+        <div class="cat-card">
+          <svg class="cat-icon" viewBox="0 0 48 48" fill="none" stroke="#2A2823" stroke-width="1.4"><path d="M8 6h32M12 6c0 10-3 16-3 32M20 6c1 10-1 16 0 32M28 6c-1 10 1 16 0 32M36 6c0 10 3 16 3 32"/></svg>
+          <h3>Sheer Curtains</h3>
+          <p>Voile and linen sheers that soften daylight and hold your privacy without ever blocking the view outside.</p>
+          <span class="cat-tag">01 — Light Filtering</span>
+        </div>
+
+        <div class="cat-card">
+          <svg class="cat-icon" viewBox="0 0 48 48" fill="none" stroke="#2A2823" stroke-width="1.4"><path d="M6 8h36M10 8v34a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8M28 8v34a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8"/></svg>
+          <h3>Fabric Drapery</h3>
+          <p>Lined and interlined curtains in cotton, velvet and boucle — full-bodied fabric for warmth, weight and full blackout.</p>
+          <span class="cat-tag">02 — Full Coverage</span>
+        </div>
+
+        <div class="cat-card">
+          <svg class="cat-icon" viewBox="0 0 48 48" fill="none" stroke="#2A2823" stroke-width="1.4"><rect x="8" y="8" width="32" height="32" rx="1"/><path d="M8 16h32M8 24h32M8 32h32"/></svg>
+          <h3>Venetian &amp; Roman Blinds</h3>
+          <p>Timber, aluminium and fabric blinds for precise light control in kitchens, studies and bathrooms.</p>
+          <span class="cat-tag">03 — Precise Control</span>
+        </div>
+
+        <div class="cat-card trending">
+          <svg class="cat-icon" viewBox="0 0 48 48" fill="none" stroke="#2A2823" stroke-width="1.4"><circle cx="24" cy="24" r="15"/><path d="M24 16v8l6 4"/></svg>
+          <h3>Trending Now</h3>
+          <p>Smart motorized tracks, layered sheer-and-blackout double rails, and raw linen with visible slub texture.</p>
+          <span class="cat-tag">04 — New This Season</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SWATCHES -->
+  <section id="swatches" class="swatch-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Choose a mood</span>
+        <h2>Pick a swatch, see it drape</h2>
+        <p>A quick preview of how each colourway falls in pleated fabric — every shade shown here is in stock as both sheer and full drapery weight.</p>
+      </div>
+      <div class="swatch-layout">
+        <div class="swatch-preview">
+          <div class="pleat-stage">
+            <div class="rod"></div>
+            <div class="pleats" id="swatch-pleats"></div>
+          </div>
+        </div>
+        <div class="swatch-list" id="swatch-list">
+          <button class="swatch-row active" data-color="#8C9C7E" data-name="Sage" data-desc="Fresh, garden-facing rooms">
+            <span class="swatch-chip" style="background:#8C9C7E"></span>
+            <span class="swatch-name">Sage</span>
+            <span class="swatch-desc">Fresh, garden-facing rooms</span>
+          </button>
+          <button class="swatch-row" data-color="#8A6B4C" data-name="Walnut Clay" data-desc="Warm, north-facing living rooms">
+            <span class="swatch-chip" style="background:#8A6B4C"></span>
+            <span class="swatch-name">Walnut Clay</span>
+            <span class="swatch-desc">Warm, north-facing living rooms</span>
+          </button>
+          <button class="swatch-row" data-color="#EDE4D3" data-name="Ivory Linen" data-desc="Bright, all-day sun rooms">
+            <span class="swatch-chip" style="background:#EDE4D3"></span>
+            <span class="swatch-name">Ivory Linen</span>
+            <span class="swatch-desc">Bright, all-day sun rooms</span>
+          </button>
+          <button class="swatch-row" data-color="#7C93A0" data-name="Dusty Blue" data-desc="Calm bedrooms and studies">
+            <span class="swatch-chip" style="background:#7C93A0"></span>
+            <span class="swatch-name">Dusty Blue</span>
+            <span class="swatch-desc">Calm bedrooms and studies</span>
+          </button>
+          <button class="swatch-row" data-color="#3A3833" data-name="Charcoal" data-desc="Media rooms, full blackout">
+            <span class="swatch-chip" style="background:#3A3833"></span>
+            <span class="swatch-name">Charcoal</span>
+            <span class="swatch-desc">Media rooms, full blackout</span>
+          </button>
+          <button class="swatch-row" data-color="#BE7C56" data-name="Terracotta" data-desc="Dining rooms, evening light">
+            <span class="swatch-chip" style="background:#BE7C56"></span>
+            <span class="swatch-name">Terracotta</span>
+            <span class="swatch-desc">Dining rooms, evening light</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>From window to finished curtain</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="num">01</span>
+          <h3>We measure</h3>
+          <p>A stylist visits your home, measures every window and talks through light, privacy and how the room is used.</p>
+        </div>
+        <div class="process-step">
+          <span class="num">02</span>
+          <h3>You choose</h3>
+          <p>Pick fabric, weight, heading style and hardware from our swatch library — sheer, lined, or layered.</p>
+        </div>
+        <div class="process-step">
+          <span class="num">03</span>
+          <h3>We make &amp; fit</h3>
+          <p>Every panel is cut and sewn to your exact drop, then hung and dressed by our own installers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonial-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">From our clients</span>
+        <h2>Rooms, finished properly</h2>
+      </div>
+      <div class="test-grid">
+        <div class="test-card">
+          <p class="quote">"The sheers finally stopped the afternoon glare without turning the living room into a cave. Exactly the balance we asked for."</p>
+          <p class="who">— L. Chen, apartment renovation</p>
+        </div>
+        <div class="test-card">
+          <p class="quote">"Layered blackout behind linen sheers on the same track — didn't know that was possible until NOOK STUDIO suggested it."</p>
+          <p class="who">— M. Zhou, family home</p>
+        </div>
+        <div class="test-card">
+          <p class="quote">"The Roman blinds in the kitchen are the first thing guests ask about. Precise fit, no gaps at the edges."</p>
+          <p class="who">— R. Tang, kitchen remodel</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact-layout">
+      <div class="contact-info">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Book a free in-home measure</h2>
+        <p>Tell us about your windows and a NOOK STUDIO stylist will call to arrange a visit — no obligation, no pressure.</p>
+
+        <div class="info-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <div class="label">Phone</div>
+            <div class="value"><a href="tel:+862885238835">028 8523 8835</a></div>
+          </div>
+        </div>
+        <div class="info-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <div>
+            <div class="label">Email</div>
+            <div class="value">hello@nookstudio.com</div>
+          </div>
+        </div>
+        <div class="info-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <div class="label">Showroom</div>
+            <div class="value">Chengdu, Sichuan</div>
+          </div>
+        </div>
+        <div class="info-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div>
+            <div class="label">Hours</div>
+            <div class="value">Mon – Sat, 9:30am – 6:30pm</div>
+          </div>
+        </div>
+      </div>
+
+      <form>
+        <div class="form-row">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" type="text" placeholder="Your name">
+          </div>
+          <div>
+            <label for="phone">Phone number</label>
+            <input id="phone" type="tel" placeholder="Best number to reach you">
+          </div>
+        </div>
+        <div>
+          <label for="style">What are you dressing?</label>
+          <select id="style">
+            <option>Sheer curtains</option>
+            <option>Fabric drapery</option>
+            <option>Venetian or Roman blinds</option>
+            <option>Not sure yet — need advice</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Tell us about the room</label>
+          <textarea id="message" placeholder="Number of windows, room type, anything you already have in mind..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start; margin-top:6px;">Request a call back</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="#top" class="logo">NOOK<span>·</span>STUDIO</a>
+        <p>Made-to-measure curtains, drapery and blinds — fitted by our own team, from first measure to final hang.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#collections">Sheer Curtains</a></li>
+          <li><a href="#collections">Fabric Drapery</a></li>
+          <li><a href="#collections">Blinds</a></li>
+          <li><a href="#swatches">Trending Styles</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#">Our Process</a></li>
+          <li><a href="#">Fabric Care</a></li>
+          <li><a href="#">Book a Measure</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+862885238835">028 8523 8835</a></li>
+          <li><a href="#">hello@nookstudio.com</a></li>
+          <li><a href="#">Chengdu, Sichuan</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nook Studio. All rights reserved.</span>
+      <span>Made to measure, always.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function buildPleats(containerId, count){
+    const el = document.getElementById(containerId);
+    if(!el) return;
+    el.innerHTML = '';
+    for(let i=0;i<count;i++){
+      const d = document.createElement('div');
+      d.className = 'pleat';
+      el.appendChild(d);
+    }
+  }
+  buildPleats('hero-pleats', 14);
+  buildPleats('swatch-pleats', 14);
+
+  const rows = document.querySelectorAll('.swatch-row');
+  rows.forEach(row => {
+    row.addEventListener('click', () => {
+      rows.forEach(r => r.classList.remove('active'));
+      row.classList.add('active');
+      const color = row.getAttribute('data-color');
+      document.documentElement.style.setProperty('--current-swatch', color);
+    });
+  });
+
+  const form = document.querySelector('form');
+  if(form){
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Request sent — we\\'ll call you soon';
+    });
+  }
+</script>
+
+</body>
+</html>
