@@ -1,5 +1,5 @@
 window.DEFAULT_SITE={brand:'Nook Studio',
-hero:{eyebrow:'Custom Made with Care in Aotearoa',
+hero:{eyebrow:'Custom Made Curtains & Shades with Care',
 title:'A window,|dressed in <em>the right light</em>',
 text:'Nook Studio is inspired by the sun-soaked warmth of Tuscany & the quiet poetry of Wabi-sabi. One brings light, the other embraces shadow-together craft your nook, filled with gentle light, natural texture, and unhurried ease, shaped through thoughtful craftsmanship, timeless fabrics, and tailored design. ',
 primary_label:'Book a Measure & Fit',
@@ -31,4 +31,4 @@ phone:'028-8523-8835',
 visiting:'Please Book an Appointment Before Visiting the Showroom'},
 footer:{description:'A Rolleston-based custom curtain studio, handling fabric selection, measuring and installation from start to finish.',
 copyright:'© 2026 Nook Studio. All rights reserved.',
-tagline:'Custom Made with Care in New Zealand.'}};
+tagline:'Custom Made Curtains & Blinds with Care'}};
